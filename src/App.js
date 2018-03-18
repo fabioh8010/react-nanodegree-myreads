@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CssBaseline, AppBar, Toolbar, Typography } from 'material-ui';
+import Bookshelf from './components/Bookshelf'
 
 class App extends Component {
   render () {
@@ -14,6 +15,9 @@ class App extends Component {
             </Typography>
           </Toolbar>
         </AppBar>
+        <div className="main-content">
+          <Bookshelf title="Currently Reading" />
+        </div>
       </div>
     );
   }
