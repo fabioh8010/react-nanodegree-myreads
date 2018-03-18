@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
-import { Typography, Divider } from 'material-ui';
+import { withStyles, Typography, Divider } from 'material-ui';
 import '../App.css';
+
+const styles = {
+  title: {
+    flex: 1
+  }
+}
 
 class Bookshelf extends Component {
   render () {
-    const { title } = this.props
+    const { classes, title } = this.props
 
     return (
       <div>
-        <Typography className="bookshelf-title" variant="display2" color="secondary">
+        <Typography className={classes.title} variant="display2" color="secondary">
           {title}
         </Typography>
         <Divider />
@@ -17,4 +23,4 @@ class Bookshelf extends Component {
   }
 }
 
-export default Bookshelf;
+export default withStyles(styles)(Bookshelf);

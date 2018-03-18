@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import { CssBaseline, AppBar, Toolbar, Typography } from 'material-ui';
+import { withStyles, CssBaseline, AppBar, Toolbar, Typography } from 'material-ui';
 import Bookshelf from './components/Bookshelf'
 import { getAll } from './BooksAPI'
+
+const styles = {
+  appBar: {
+    flex: 1
+  }
+}
 
 class App extends Component {
   state = {
@@ -27,6 +33,7 @@ class App extends Component {
   }
 
   render () {
+    const { classes } = this.props
     const { currentlyReadingBooks, wantToReadBooks, readBooks } = this.state
 
     return (
@@ -34,7 +41,7 @@ class App extends Component {
         <CssBaseline />
         <AppBar position="fixed" color="primary">
           <Toolbar>
-            <Typography className="app-bar" variant="title" color="inherit">
+            <Typography className={classes.appBar} variant="title" color="inherit">
               My Reads
             </Typography>
           </Toolbar>
@@ -49,4 +56,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withStyles(styles)(App);

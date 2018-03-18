@@ -1,12 +1,4 @@
-.app-bar {
-  flex: 1
-}
-
 .main-content {
   padding: 20px;
   padding-top: 84px;
-}
-
-.bookshelf-title {
-  flex: 1
 }
